@@ -175,3 +175,73 @@
 #     L.append(a)
 #
 # print(L)
+# 20.Найти количество четных чисел в массиве.
+# L = [1,2,3,4,5,6,7,8,9]
+# count = 0
+# for i in L:
+#     if i % 2 == 0:
+#         count += 1
+# print(count)
+
+
+# 21.Найти количество чисел в массиве, которые делятся на 3, но не делятся на 7.
+# import random
+# L = [random.randint(1, 19) for _ in range(10)]
+# print(L)
+# count = 0
+# for i in L:
+#     if i % 3 == 0 and i % 7 != 0:
+#         count += 1
+# print(count)
+
+# 22.Определите, каких чисел в массиве больше: которые делятся на первый элемент массива
+# или которые делятся на последний элемент массива.
+# import random
+# L = [random.randint(1, 9) for _ in range(5)]
+# print(L)
+# countX = 0
+# countY = 0
+# for i in L:
+#     if i % L[0] == 0:
+#         countX += 1
+#     if i % L[-1] == 0:
+#         countY += 1
+# if countX > countY:
+#     print('Чисел, делящихся на перавый элемент массива больше')
+# elif countY == countX:
+#     print('Одинаковое количество')
+# else:
+#     print('Чисел, делящихся на последний элемент массива больше')
+# print(countX)
+# print(countY)
+
+# 23.Найдите сумму и произведение элементов массива.
+# import random
+# L = [random.randint(1, 9) for _ in range(5)]
+# print(L)
+# m = 1
+# for i in L:
+#     m *= i
+# print('Произведение элементов массива равно: ', m)
+# print('Сумма элементов массива равна: ', sum(L))
+
+# 24.Найдите сумму четных чисел массива.
+# import random
+# L = [random.randint(1, 9) for _ in range(5)]
+# print(L)
+# M = []
+# for i in L:
+#     if i % 2 ==0:
+#         M.append(i)
+# print(sum(M))
+
+# 25.Найдите сумму нечетных чисел массива, которые не превосходят 11.
+# import random
+# L = [random.randint(1, 20) for _ in range(5)]
+# print(L)
+# M = []
+# for i in L:
+#     if i % 2 == 1 and i <= 11:
+#         M.append(i)
+# print(M)
+# print(sum(M))
