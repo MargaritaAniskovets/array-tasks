@@ -174,7 +174,131 @@
 #         print (i % 5)
 #     L.append(a)
 #
+<<<<<<< HEAD
 # print(L)
+=======
+# 11.Создать массив, состоящий из троек подряд идущих одинаковых элементов.
+# L = [f * 3 for f in 'Minsk']
+# print(L)
+
+
+# # 12.Создать массив, который одинаково читается как слева направо, так и справа налево.
+# import random
+# L = [random.randint(0 ,9) for x in range(random.randint(10,10))]# создаю массив
+# print(L)
+# print(len(L))
+#
+# halfL = 0
+# if len(L) % 2 == 1: # нахожу половину массива, при нечетной его длине
+#     halfL = (len(L)-1) /2
+# else:
+#     halfL = len(L) / 2 # половина массива при четной длине
+#
+# print(halfL)
+# for i in range(int(halfL)): # до конца половины массива
+#     L[len(L) - 1 - i] = L[i] # перезаписываю последний элемент массива по порядку, начиная с первого
+#
+# print(L)
+
+#13.Сформировать массив из случайных чисел, в которых ровно две единицы, стоящие на случайных позициях.
+# import random
+# L = [random.randint(1, 2) for x in range(5)]
+# print(L)
+# while L.count(1) > 2:
+#     L.remove(1)
+#
+# while L.count(1) < 2:
+#     L.append(1)
+# print(L)
+
+# 14.Заполните массив случайным образом нулями и единицами так, чтобы количество единиц было больше количества нулей.
+# import random
+# L = [random.randint(0,1) for x in range(6)]
+# if L.count(1) <= L.count(0):
+#     M = [1]*L.count(0)
+#     L = L + M
+# print(L)
+
+# 15.Сформировать массив из случайных целых чисел от 0 до 9 , в котором единиц от 3 до 5 и двоек больше троек.
+# import random
+
+# L = [random.randint(0,9) for x in range(10)]
+# print(L)
+# while L.count(1) > 5:
+#     L.remove(1)
+# while L.count(1) < 3:
+#     L.append(1)
+# while L.count(2) <= L.count(3):
+#     L.append(2)
+# print(L)
+
+# 16.Создайте массив, в котором количество отрицательных чисел равно количеству положительных и положительные
+# числа расположены на случайных местах в массиве.
+
+# import random
+# L = [random.randint(0, 10) for x in range(5)]
+# print(L)
+#
+# even = 0
+# odd = 0
+# for i in L:
+#     if i % 2 == 0:
+#         even+=1
+#     else:
+#         odd+=1
+#
+# while even > odd:
+#     L.append(1)
+#     odd+=1
+# while odd > even:
+#     L.append(2)
+#     even +=1
+# print(L)
+
+# 17.Заполните массив случайным образом нулями, единицами и двойками так, чтобы первая двойка в массиве
+# встречалась раньше первой единицы, количество единиц было в точности равно суммарному количеству нулей и двоек.
+# import random
+#
+# L = [random.randint(0, 2) for _ in range(9)]
+# print(L)
+#
+# if L.index(2) > L.index(1):
+#     L[L.index(1)] = 0
+# print(L)
+#
+# sum02 = L.count(0) + L.count(2)
+# print(sum02)
+#
+# while L.count(1) < sum02:
+#     L.append(1)
+# while L.count(1) > sum02:
+#     L[L.index(1)] = 0
+# print(L)
+
+
+# 18.Придумайте правило генерации массива заданной длины. Определите, сгенерирован ли данный массив вашим правилом или нет.
+# import random
+# num = int(input('Введите длину массива: '))
+# L = [random.randint(0, 15) for _ in range(num)]
+# print(L)
+# for i in L:
+#     if i % 2 == 1:
+#        L.append(1000)
+# print(L)
+
+# L1 = [x + y for x in 'sunny' if x != 'n' for y in 'run' if y != 'u']# генератор списка 2
+# print(L1)
+
+# 19.Определить, содержит ли массив данное число x
+# import random
+
+# L = [random.randint(0, 15) for _ in range(10)]
+# print(L)
+# x = int(input('Введите число: '))
+# if x in L:
+#     print(x)
+
+>>>>>>> add tasks from 11 to 25
 # 20.Найти количество четных чисел в массиве.
 # L = [1,2,3,4,5,6,7,8,9]
 # count = 0
