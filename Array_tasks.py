@@ -447,3 +447,61 @@
 # else:
 #     sumEventn = 2 * (sum(c))
 #     print('Сумма при четном n равна: ', sumEventn)
+
+# 31.Дан массив x из n элементов. Найдите xn(xn+xn−1)(xn+xn−1+xn−2)…(xn+…+x1).
+# import random
+# n = int(input('Введите количество элементов в массиве: '))
+# L = [random.randint(1, 3) for _ in range(n)]
+# print(L)
+# print(L[-1:])
+# indSum = len(L)-1
+#
+# res = 1
+# sum = 0
+#
+# while indSum >= 0:
+#     for i in L[indSum:]:
+#         sum += i
+#     print('sum:', sum)
+#     indSum = indSum - 1
+#     res *= sum
+#     print(res)
+#     sum = 0
+# print('res:', res)
+
+# 32.Найти наибольший элемент массива.
+# import random
+# L = [random.randint(0, 9) for _ in range(6)]
+# print(L)
+# print(max(L))
+
+# 33.Найдите сумму наибольшего и наименьшего элементов массива.
+# import random
+# L = [random.randint(0, 9) for _ in range(6)]
+# print(L)
+# y = max(L)
+# x = min(L)
+# b = x + y
+# print('Сумма наибольшего и наименьшего элементов равна: ',b)
+
+# 34.Найдите количество элементов массива, которые отличны от наибольшего элемента не более чем на 10%.
+# import random
+# L = [random.randint(0, 100) for _ in range(25)]
+# print(L)
+# y = max(L)
+# print(max(L))
+# count = 0
+# for i in L:
+#     if i == y - (y/100)*10:
+#         count +=1
+# print(count)
+
+# 35.Найдите наименьший четный элемент массива.
+# import random
+# L = [random.randint(0, 9) for _ in range(6)]
+# print(L)
+# M = []
+# for i in L:
+#     if i %2 ==0:
+#         M.append(i)
+# print(min(M))
