@@ -174,9 +174,8 @@
 #         print (i % 5)
 #     L.append(a)
 #
-<<<<<<< HEAD
 # print(L)
-=======
+
 # 11.Создать массив, состоящий из троек подряд идущих одинаковых элементов.
 # L = [f * 3 for f in 'Minsk']
 # print(L)
@@ -298,7 +297,6 @@
 # if x in L:
 #     print(x)
 
->>>>>>> add tasks from 11 to 25
 # 20.Найти количество четных чисел в массиве.
 # L = [1,2,3,4,5,6,7,8,9]
 # count = 0
@@ -369,3 +367,83 @@
 #         M.append(i)
 # print(M)
 # print(sum(M))
+
+# 26.Найдите сумму чисел массива, которые расположены до первого четного числа массива. Если четных
+# чисел в массиве нет, то найти сумму всех чисел за исключением крайних.
+# import random
+# L = [random.randint(1, 6) for _ in range(5)]
+# print(L)
+# sum1 = 0
+# isEven = False
+# for i in L:
+#     if i % 2 == 1:
+#         sum1 += i
+#     else:
+#         isEven = True
+#         break
+# if isEven == False:
+#     print('sum(L[1:-1]): ', sum(L[1:-1]))
+# else:
+#     print('sum1 :', sum1)
+
+# 27.Найдите сумму чисел массива, которые стоят на четных местах.
+# import random
+# L = [random.randint(0, 9) for _ in range(6)]
+# print(L)
+# print(L[1::2])
+# M = []
+# M.append(sum(L[1::2]))
+# print(M)
+
+# 28.Найдите сумму чисел массива, которые стоят на нечетных местах и при этом превосходят сумму крайних элементов массива.
+# import random
+# L = [random.randint(0, 9) for _ in range(9)]
+# print(L)
+# M = L[0::2]
+# N = L[0::2]
+# print('M:', M)
+# print('N:', N)
+# summ = L[0] + L[-1]
+# print(summ)
+# c = [a + b for a in M[1:] for b in N[:-1]]
+#
+# print('maxc: ', max(c))
+# if max(c) > summ:
+#     print('Искомая сумма чисел: ', max(c))
+# else:
+#     print('Нет такой суммы')
+
+# 29.Дан массив x из n элементов. Найдите x1−x2+x3−…−xn−1+xn.
+# import random
+# x = [random.randint(1, 5) for _ in range(5)]
+# print(x)
+# sum1 = 0
+# a = 1
+# for i in x:
+#     sum1 = sum1 + i*a
+#     a = a * (-1)
+# print(sum1)
+
+# 30.Дан массив x из n элементов. Найдите x1xn+x2xn−1+…+xnx1.
+# import random
+# n = int(input('Введите количество элементов в массиве: '))
+# x = [random.randint(1, 3) for _ in range(n)]
+# print('x:', x)
+# y = x[::-1]
+# print('y:', y)
+# i = 0
+# c = []
+# while i < len(x):
+#     c.append(x[i]*y[i])
+#     i += 1
+# print(c)
+#
+# if n % 2 == 1:
+#     f = int((len(x) - 1) / 2)
+#     print('x[f]: ', x[f])
+#     print('sumC: ', sum(c))
+#     sumOddn = x[f] * x[f] + 2 * (sum(c) - x[f] * x[f])
+#     print('Сумма при  нечетном n равна: ', sumOddn)
+# else:
+#     sumEventn = 2 * (sum(c))
+#     print('Сумма при четном n равна: ', sumEventn)
