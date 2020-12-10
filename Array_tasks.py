@@ -505,3 +505,98 @@
 #     if i %2 ==0:
 #         M.append(i)
 # print(min(M))
+
+# 36.Среди элементов с нечетными номерами найдите наибольший элемент массива, который делится на 3.
+# import random
+# L = [random.randint(0, 33) for _ in range(6)]
+# print(L)
+# M = []
+# N = []
+# for i in L:
+#     if i % 2==1:
+#         M.append(i)
+# for i in M:
+#     if i % 3 == 0:
+#         N.append(i)
+# print(max(N))
+
+# 37.Дан массив и число p. Найдите два различных числа в массиве, сумма которых наиболее близка к p.
+# import random
+# #
+# L = [random.randint(0, 9) for i in range(int(input('Введите размер массива: ')))]
+# print(L)
+# p = int(input('Введите число: '))
+# a = 0
+# b = 1
+# nearestSum = abs(p - (L[a] + L[b]))
+#
+# for i in range(len(L)):
+#     for j in range(len(L)):
+#         if i == j:
+#             continue
+#         sum = abs(p - (L[i] + L[j]))
+#         if sum < nearestSum:
+#             nearestSum = sum
+#             a = i
+#             b = j
+#
+# print('res1: ', a)
+# print('res2: ', b)
+# print('a ', L[a], " ", 'b', L[b])
+
+# 38.Дан массив. Найдите два соседних элемента, сумма которых минимальна.
+# import random
+# L = [random.randint(0, 9) for _ in range(6)]
+# print(L)
+#
+# a = L[0]
+# b = L[1]
+# pred = L[0]
+#
+# for i in L[1:]:
+#     if (a + b) > (pred + i):
+#         a = pred
+#         b = i
+#     pred = i
+#
+# print(a)
+# print(b)
+
+# 39.Дан массив. Найдите три последовательных элемента в массиве, сумма которых максимальна.
+# import random
+# L = [random.randint(0, 9) for _ in range(6)]
+# print(L)
+#
+# a = L[0]
+# b = L[1]
+# c = L[2]
+# pred1 = L[0]
+# pred2 = L[1]
+#
+# for i in L[2:]:
+#     if (a + b + c) < (pred1 + pred2 + i):
+#         a = pred1
+#         b = pred2
+#         c = i
+#     pred1 = pred2
+#     pred2 = i
+#
+# print(a)
+# print(b)
+# print(c)
+
+# 40.В данном массиве найдите количество чисел, соседи у которых отличаются более чем в 2 раза.
+# import random
+# L = [random.randint(1, 9) for _ in range(9)]
+# print(L)
+#
+# pred = L[0]
+# a = L[1]
+#
+# count = 0
+# for i in L[1:]:
+#     if (pred / i) > 2 or (i / pred) > 2:
+#         count += 1
+#         pred = a
+#
+# print(count)
