@@ -600,3 +600,118 @@
 #         pred = a
 #
 # print(count)
+
+# 41.Найдите количество чисел, каждое из которых равно сумме квадратов своих соседей и при этом не является наибольшим в массиве.
+# import random
+# L = [random.randint(0, 4) for _ in range(15)]
+# print(L)
+# # L = [ 3, 25, 4, 0, 1,2,1,0,0,0,1,5,2]
+# maxL = max(L)
+# print('maxL:', maxL)
+# count = 0
+# pred1 = L[0]
+# pred2 = L[1]
+#
+# for i in L[2:]:
+#     if pred2 == (pred1*pred1 + i*i) and pred2 != maxL:
+#         count += 1
+#     pred1 = pred2
+#     pred2 = i
+# print(count)
+
+# 42.Проверьте, содержит ли данный массив из n чисел, все числа от 1 до n.
+
+# import random
+# n = int(input('Введите количество чисел массива: '))
+# L = [random.randint(1, n) for _ in range(n)]
+# print(L)
+# c = 0
+# b = 0
+# for i in range(len(L)):
+#     for j in range(len(L)):
+#         if i == j:
+#             continue
+#         if L[i] == L[j]:
+#             c = 1
+#         else:
+#             b = 1
+# if c == 1:
+#     print('no')
+# elif b == 1:
+#     print('yes')
+
+# 43.Проверьте, образует ли элементы массива в данном порядке арифметическую или геометрическую прогрессии.
+# L = [10, 20, 30, 40, 50]
+# L = [2, 4, 8, 16]
+#
+#
+# isGeom = True
+# denominator = L[1] / L[0]
+# pred = L[0]
+# for i in L[1:]:
+#     if i / pred == denominator:
+#         pred = i
+#     else:
+#         isGeom = False
+#         break
+# if isGeom:
+#     print('Это геометрическая прогрессия')
+# else:
+#     print('Это не геометическая прогрессия')
+#
+# isArif = True
+# razn = L[1] - L[0]
+# pred = L[0]
+# for i in L[1:]:
+#     if i - pred == razn:
+#         pred = i
+#     else:
+#         isArif = False
+#         break
+# if isArif:
+#     print('Это арифметическая прогрессия')
+# else:
+#     print('Это не арифметическая прогрессия')
+
+
+
+# 44.Проверьте, является ли данный массив возрастающим или убывающим.
+# import random
+# L = [random.randint(0, 5) for _ in range(5)]
+# print(L)
+# # L = [1, 2, 3, 4, 5]
+# a = L[0]
+# b = L[1]
+# increases = 0
+# decreases = 0
+# for i in L:
+#     if a < b:
+#         increases += 1
+#         a = b
+#         b = i
+#     else:
+#         decreases +=1
+#         a = b
+#         b = i
+# if increases > decreases:
+#     print('Массив возрастающий')
+# else:
+#     print('Массив убывающий')
+
+# 45.Найдите количество различных элементов данного массива.
+'''вариант1'''
+# a = [1,'',3,2,'3',2,2,3,'3',3,'5']
+# d = {x:a.count(x) for x in a}
+# print(d)
+'''вариант2'''
+# import collections
+# a = [1, '', 3, 2, '3', 2, 2, 3, '3', 3, '5']
+# counter = collections.Counter(a)
+# print(counter)
+# print(f'Элементы: {counter.keys()} в количестве: {counter.values()}')
+'''вариант3'''
+# a = [1,'',3,2,'3',2,2,3,'3',3,'5']
+# b = {}
+# for item in a:
+#        b[item] = b.get(item, 0) + 1
+# print(b)
