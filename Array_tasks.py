@@ -715,3 +715,104 @@
 # for item in a:
 #        b[item] = b.get(item, 0) + 1
 # print(b)
+
+# 46.Определите количество перемен знаков элементов массива.
+# L = [-1, -1, 1, 1, -1, -1, 1, -1, 1]
+#
+# def count(L):
+#     prev = 0
+#     res = 0
+#     for i in L:
+#
+#         if prev * i < 0:
+#             res += 1
+#         else:
+#             0
+#         if i != 0:
+#             prev = i
+#         else:
+#             prev
+#     return res
+# print(count(L))
+# print (count([-1, 0, 1, -1, 0, 0, 0, 2, 0, -1]))
+        # def count(l):# необычная запись решения
+        #     prev = 0
+        #     r = 0
+        #     for value in l:
+        #         r += 1 if prev * value < 0 else 0
+        #         prev = value if value != 0 else prev
+        #     return r
+        #
+        # print count([-1, 0, 1, -1, 0, 0, 0, 2, 0, -1]) # -> 4
+
+# 47.В данном массиве найти максимальное количество одинаковых элементов.
+# a = [1, '', 3, 3, 2, '3', 2, 2, 3, '3', 3, '5', 3]
+# d = {x:a.count(x) for x in a}
+# print(d)
+# print(d.values())
+# countEl = d.values()
+# print('Максимальное количество: ', max(countEl))
+
+# 48.Найти наиболее часто встречающийся элемент в массиве целых чисел.
+
+# import random
+# n = int(input('Введите количество чисел массива: '))
+# L = [random.randint(1, n) for _ in range(n)]
+# print(L)
+# count = 0
+# res = 0
+# d = {x:L.count(x) for x in L}
+# print(d)
+#
+# for i in L:
+#     if L.count(i) > count:
+#         count = L.count(i)
+#         res = i
+# print('Наиболее часто встречающийся элемент в массиве:', res ,'встречается', count , 'раз(а)')
+
+# 49.В одномерном массиве, состоящем из n вещественных элементов, вычислите номер минимального элемента массива и сумму
+# элементов массива, расположенных между первым и вторым отрицательными элементами.
+# import random
+# n = int(input('Введите длину массива: '))
+# L = [round(random.uniform(-100, 100), 3) for i in range(n)]
+# print(L)
+# print('Номер минимального элемента массива:', L.index(min(L))+1)
+#
+# minus = []
+# for i in range(len(L)):
+#     if len(minus) == 2:
+#         break
+#     elif L[i] < 0:
+#         minus.append(L[i])
+# print('Искомая сумма равна:', sum(L[L.index(minus[0])+1:L.index(minus[1])]))
+
+# 50.Напишите программу, которая вводит с клавиатуры непустой массив целых чисел, и выводит число
+# локальных максимумов (элемент является локальным максимумом, если он не имеет соседей, больших, чем он сам).
+
+# L = []
+# a = int(input('Введите первое число'))
+# b = int(input('Введите второе число'))
+# c = int(input('Введите третье число'))
+# d = int(input('Введите четвертое число'))
+# e = int(input('Введите пятое число'))
+# L.append(a)
+# L.append(b)
+# L.append(c)
+# L.append(d)
+# L.append(e)
+# print(L)
+# pred = L[0]
+# a = L[1]
+# b = L[2]
+# count = 0
+# for i in L:
+#     if a > pred and a > b:
+#         count +=1
+#         pred = a
+#         a = b
+#         b= i
+#     else:
+#         pred = a
+#         a = b
+#         b = i
+# print(count)
