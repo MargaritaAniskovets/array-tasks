@@ -816,3 +816,187 @@
 #         a = b
 #         b = i
 # print(count)
+
+# 51.В данном массиве найдите два наименьших элемента.
+# import random
+# L = [random.randint(0, 15) for _ in range(7)]
+# print(f'В массиве {L}')
+# a = min(L)
+# L.remove(a)
+# b = min(L)
+# print(f'Наименьшие числа : {a} и {b}')
+
+# 52.Определите, есть ли в массиве повторяющиеся элементы.
+# import random
+# L = [random.randint(0, 15) for _ in range(7)]
+# print(L)
+#
+# for i in range(len(L)):
+#     if L.count(L[i]) > 1:
+#         print('В массиве есть повторяющиеся элементы')
+#         break
+# else:
+#    print('Нет повторяющихся элементов в массиве')
+
+
+# 53.В данном массиве найдите наибольшую серию подряд идущих элементов, расположенных по возрастанию.
+# import random
+# L = [random.randint(0, 10) for _ in range(10)]
+# print(f'Дан массив: {L}')
+#
+# bestStart = 0
+# bestCount = 1
+#
+# currentStart = 0
+# currentCount = 1
+#
+# for i in range(len(L) - 1):
+#    if L[i] < L[i + 1]:
+#       currentCount += 1
+#    else:
+#       if currentCount > bestCount:
+#          bestCount = currentCount
+#          bestStart = currentStart
+#
+#       currentCount = 1
+#       currentStart = i + 1
+#
+# print(f'Индекс первого элемента: {str(bestStart)}')
+# print(f'Кол-во элементов: {str(bestCount)}')
+# string = ''
+# for i in range(bestCount):
+#    string += str(L[bestStart + i]) + ' '
+# print(f'Наибольшая серия подряд идущих элементов: {string}')
+
+# 54.В массиве найдите количество серий из четверок подряд идущих попарно различных элементов (значит - все эл.в наборе разные).
+# a = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+# count = 0
+# for i in range(len(a)-3):
+#     if (a[i] != a[i+1]) and (a[i] != a[i+2]) and (a[i] != a[i+3]) and (a[i+1] != a[i+2]) and (a[i+1] != a[i+3]) and (a[i+2] != a[i+3]):
+#         count+=1
+#         c = [a[i], a[i+1], a[i+2], a[i+3]]
+#         print(c)
+# print(f'Количество серий из четверок подряд идущих попарно различных элементов: {count}')
+'''вариант 2'''
+# L = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+# result = []
+# for i in range(len(L) - 3):
+#    isDuplicate = False
+#    for j in range(3):
+#       for o in range(3 - j):
+#          if L[j + i] == L[(i + 3 - o)]:
+#             print(f'duplicate {str(L[j + i])} with {str(L[(i + 3 - o)])}')
+#             isDuplicate = True
+#             break
+#       if isDuplicate:
+#          break
+#    else:
+#       result.append(i)
+#
+# print('Серии из четверок подряд идущих попарно различных элементов: ')
+#
+# for i in range(len(result)):
+#    string = ""
+#    for j in range(4):
+#       string += str(L[result[i] + j]) + " "
+#    print(string)
+#
+# print(f' Количество  четверок подряд идущих попарно различных элементов: {len(result)}')
+
+# 55.Определите, можно ли вычеркнуть из данного массива одно число так, чтобы оставшиеся числа оказались упорядоченными по возрастанию.
+# import random
+# L = [random.randint(0,2) for _ in range(4)]
+# print(f'Дан массив: {L}')
+#
+# ## L  = [10,20,90,40,50]  # можно
+# isOneDown = False
+# isUp = True
+# for i in range(len(L)-1):
+#    if L[i] > L[i+1]:
+#       if isOneDown == False:
+#          isOneDown = True
+#       else:
+#          isUp = False
+#
+# if isUp == True:
+#    print('Можно')
+# else:
+#    print('Нельзя')
+
+# 56. В массиве заменить все числа, большие данного числа, на среднее арифметическое всех чисел массива.
+# import random
+# L = [random.randint(0, 5) for _ in range(5)]
+# print(f'Дан массив: {L}')
+# n = int(input('Введите число для сравнения:'))
+#
+# srArif = sum(L)/len(L)
+# print('Сумма чисел массива равна:', sum(L))
+# print('Среднее арифметическое всех чисел массива:', srArif)
+# for i in range(len(L)):
+#    if L[i] <= n:
+#       pass
+#    else:
+#       L[i] = srArif
+# print(f'Измененный массив: {L}')
+
+# 57.Дан массив. Заменить все числа, меньшие последнего элемента массива, на первый элемент.
+# import random
+# L = [random.randint(0, 7) for _ in range(5)]
+# print(f'Дан массив: {L}')
+# for i in range(len(L)):
+#    if L[i] < L[len(L)-1]:
+#       L[i] = L[0]
+# print(f'Полученный массив: {L}')
+
+# 58.Поменять местами наибольший и наименьший элементы массива.
+# import random
+# L = [random.randint(0, 7) for _ in range(5)]
+# print(f'Дан массив: {L}')
+# print('maxL =', max(L))
+# print('minL =', min(L))
+# indexMax = L.index(max(L))
+# indexMin = L.index(min(L))
+# L[indexMin], L[indexMax] = L[indexMax], L[indexMin]
+# print(f'Измененный массив: {L}')
+
+# 59.Найти наибольший четный элемент массива и поменять его местами с наименьшим нечетным элементом.
+# Если одного из таких элементов нет, то всем элементам массива присвоить значение, равное нулю.
+# import random
+# L = [random.randint(1, 10) for _ in range(7)]
+# print(f'Дан массив: {L}')
+# even = []
+# odd = []
+#
+# for i in L:
+#    if i % 2 == 0:
+#          even.append(i)
+#    else:
+#          odd.append(i)
+#
+# print("Четные:   " + str(even))
+# print("Нечетные: " + str(odd))
+#
+# if len(even) == 0 or len(odd) == 0:
+#    for j in range(len(L)):
+#       L[j] = 0
+#    print(f' Результат :\n {L}')
+# else:
+#    a = L.index(max(even))
+#    b = L.index(min(odd))
+#
+#    print(f' Результат : {str(max(even))} [{str(a)}] заменяется на {str(min(odd))}  [{str(b)} ]')
+#
+#    L[b], L[a] = L[a], L[b]
+#    print(f'Полученный массив: {L}')
+
+
+# 60.Заменить каждый элемент массива с четным номером на соседний слева элемент.
+# import random
+# L = [random.randint(0, 9) for _ in range(7)]
+# print(f'Дан массив: {L}')
+#
+# for i in range(len(L)):
+#    if i % 2 != 0:
+#        L[i] = L[i - 1]
+#
+# print(f'Решение: {L}')
